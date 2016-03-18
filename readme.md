@@ -1,4 +1,4 @@
-###### Sushi Serving games
+# Sushi Serving games
 -As a user Have two buttons in beginning. I want the player to be able to have an option to see the instructions before  starting so that the player is familiar with the game . One for game start and one for instructions and information.  
 
 
