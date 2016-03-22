@@ -1,3 +1,7 @@
+$('file:///Users/Singh/code/wdi/Project1/index.html').click(function() {
+        $(this).parent().fadeOut(500);
+ });
+
 body {
   background-image: url(../images/sushibackground.jpg);
    background-size:cover

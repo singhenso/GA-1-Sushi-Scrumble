@@ -1,6 +1,48 @@
 // shrimp sushi = rice, seweed , shrimp
 
-var winningcombo = ['Shrimp', 'Seaweed', 'Rice'];
+var Tuna = {
+  name: 'Tuna',
+  ingredients: ["Rice","Seaweed","Tuna"],
+};
+
+var Scallop = {
+  name: 'Tuna',
+  ingredients: ["Rice","Seaweed","Tuna"],
+};
+var Salmon = {
+  name: 'Salmon',
+  ingredients: ["Rice","Seaweed","Salmon"],
+};
+var Scallop = {
+  name: 'Scallop',
+  ingredients: ["Rice","Seaweed","Scallop"],
+};
+var Squid = {
+  name: 'Squid',
+  ingredients: ["Rice","Seaweed","Squid"],
+};
+var Snapper = {
+  name: 'Snapper',
+  ingredients: ["Rice","Seaweed","Snapper"],
+};
+var Lobster = {
+  name: 'Lobster',
+  ingredients: ["Rice","Seaweed","Lobster"],
+};
+var Shrimp = {
+  name: 'Shrimp',
+  ingredients: ["Rice","Seaweed","Shrimp"],
+  //this function should tell the user to make a specific sushi
+};
+
+var winningcombo =[['Shrimp', 'Seaweed', 'Rice'],
+                   ['Tuna', 'Seaweed', 'Rice'],
+                   ['Scallop', 'Seaweed', 'Rice'],
+                   ['Salmon', 'Seaweed', 'Rice'],
+                   ['Squid', 'Seaweed', 'Rice'],
+                   ['Snapper',   'Seaweed', 'Rice'],
+                   ['Lobster', 'Seaweed', 'Rice'],
+                   ['Scallop', 'Seaweed', 'Rice']];
 
 // when the user clicks on a button, get the text  and add it
 // to the playersChoices array
@@ -43,11 +85,11 @@ $('#cell6').on('click', function() {
 });
 $('#cell7').on('click', function() {
   var cell7 = $(this).text();
-  playersChoices.push(cell7.trim())
+  playersChoices.push(cell7.trim());
 });
 $('#cell8').on('click', function() {
   var cell8 = $(this).text();
-  playersChoices.push(cell8.trim())
+  playersChoices.push(cell8.trim());
 });
 $('#cell9').on('click', function() {
   var cell9 = $(this).text();
@@ -66,12 +108,14 @@ var checkwin = function() {
       // return early
       return false;
     }
-  };
+  }
   // if we don't return from the function early
   // return true
   console.log('right choice');
   return true;
 };
+
+//checkwin();
 
 // when teh player has selected three ingredients
 // check and see if they're in the winningcombo
