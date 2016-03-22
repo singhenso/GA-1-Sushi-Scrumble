@@ -1,5 +1,9 @@
 // shrimp sushi = rice, seweed , shrimp
 
+$('.enter_link').click(function () {
+    $(this).parent('#splashscreen').fadeOut(500);
+});
+
 var Tuna = {
   name: 'Tuna',
   ingredients: ["Rice","Seaweed","Tuna"],
@@ -102,17 +106,38 @@ var checkwin = function() {
   // if it's not, they lose
   for (var i=0; i< playersChoices.length; i++) {
     var choice = playersChoices[i];
+    var count = 0;
+    for (var j=0; j< winningcombo.length;j++){
+      var recipe = winningcombo[j];
+      console.log(recipe);
+      if (recipe.indexOf(choice) === -1) {
+        continue;
+      } else {
+        count++ ;
+        console.log(count);
+      }
+      if (count === 3) {
+        console.log('WIN!');
+        return true;
+      } else {
+        count = 0;
+      }
+    }
+    //switch the for loops - by Kate
+
+    //go through the winning possibilities instead of the other way around.
+
     // if the choice is not there
-    if (winningcombo.indexOf(choice) === -1) {
+    ///if (winningcombo.indexOf(choice) === -1) {
       console.log('wrong choice');
       // return early
       return false;
-    }
+    //}
   }
   // if we don't return from the function early
   // return true
-  console.log('right choice');
-  return true;
+  ///console.log('right choice');
+  ///return true;
 };
 
 //checkwin();
