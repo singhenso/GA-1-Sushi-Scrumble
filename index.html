@@ -1,33 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title>Sushi Scrumble!</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script   src="https://code.jquery.com/jquery-1.12.2.js"   integrity="sha256-VUCyr0ZXB5VhBibo2DkTVhdspjmxUgxDGaLQx7qb7xY="   crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.12.2.js"   integrity="sha256-VUCyr0ZXB5VhBibo2DkTVhdspjmxUgxDGaLQx7qb7xY="   crossorigin="anonymous"></script>
 </head>
 <body>
   <div>
     <button id="btn1">Play Game</button>
     <button id="btn2">Instructions</button>
-  <table class="container">
-<tr class ="container" id="column">
-<td class="column" id="cell1"> <img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />1</td>
-<td class="column" id="cell2"> <img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />2</td>
-<td class="column" id="cell3"> <img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />3</td>
- </tr>
-<tr class="column">
- <td class="column" id="cell4"><img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />4</td>
-   <td class="column" id="cell5"><img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />5</td>
-   <td class="column" id="cell6"><img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />6</td>
- </tr>
- <tr class="column">
-   <td class="column" id="cell7"><img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />7</td>
-     <td class="column" id="cell8"><img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />8</td>
-     <td class="column" id="cell9"><img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />9</td>
-   </tr>
-   <button id="submit">Submit</button>
-
-</table>
+    <table class="container">
+      <tr class ="container" id="column">
+        <td class="column ingredient" id="cell1">
+          <img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />
+          Rice
+        </td>
+        <td class="column ingredient" id="cell2">
+          <img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />
+          Seaweed
+        </td>
+        <td class="column ingredient" id="cell3">
+          <img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />
+          Blue Fin Tuna
+        </td>
+      </tr>
+      <tr class="column">
+        <td class="column ingredient" id="cell4">
+          <img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />
+          Shrimp
+        </td>
+        <td class="column ingredient" id="cell5">
+          <img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />
+          Salmon
+        </td>
+        <td class="column ingredient" id="cell6">
+          <img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />
+          Squid
+        </td>
+      </tr>
+      <tr class="column">
+        <td class="column ingredient" id="cell7">
+          <img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />
+          snapper
+        </td>
+        <td class="column ingredient" id="cell8">
+          <img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />
+          lobster
+        </td>
+        <td class="column ingredient" id="cell9">
+          <img src="http://wtop.com/wp-content/uploads/2015/10/ThinkstockPhotos-174709526-1880x1254.jpg" width = 100px alt="" />
+          scallop
+        </td>
+      </tr>
+    </table>
+    <button id="submit">Submit</button>
+  </div>
   <script src="js/main.js"></script>
 </body>
 </html>
