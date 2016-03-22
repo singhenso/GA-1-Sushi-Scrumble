@@ -64,3 +64,9 @@ h1 {
     color: #fff;
 }
 
+.container{
+     border-style: solid
+   }
+   .column{
+     border-style: solid
+   }
