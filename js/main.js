@@ -1,16 +1,51 @@
 
 
 $('#btn1').on('click', function() {
-  alert('Let the Games Begin!');
+  var gamebegin =$(this).text() ;
+  console.log(gamebegin);
 });
 
 $('#btn2').on('click', function() {
-  alert('These are the Instructions');
+  var instructions =$(this).text();
+  console.log(instructions);
 });
 
-$('.ingredient').on('click', function() {
-  var opt2 = $(this).text();
-  console.log(opt2);
+$('#cell1').on('click', function() {
+  var cell1 = $(this).text();
+  console.log(cell1);
+});
+
+$('#cell2').on('click', function() {
+  var cell2 = $(this).text();
+  console.log(cell2);
+});
+$('#cell3').on('click', function() {
+  var cell3 = $(this).text();
+  console.log(cell3);
+});
+$('#cell4').on('click', function() {
+  var cell4 = $(this).text();
+  console.log(cell4);
+});
+$('#cell5').on('click', function() {
+  var cell5 = $(this).text();
+  console.log(cell5);
+});
+$('#cell6').on('click', function() {
+  var cell6 = $(this).text();
+  console.log(cell6);
+});
+$('#cell7').on('click', function() {
+  var cell7 = $(this).text();
+  console.log(cell7);
+});
+$('#cell8').on('click', function() {
+  var cell8 = $(this).text();
+  console.log(cell8);
+});
+$('#cell9').on('click', function() {
+  var cell9 = $(this).text();
+  console.log(cell9);
 });
 
 
@@ -21,4 +56,4 @@ $('.ingredient').on('click', function() {
   // we are trying to type out what the text of that particular dom node.
 
 
-document.getElementByID(element ID)
+//document.getElementByID(element ID)
