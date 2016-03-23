@@ -104,43 +104,64 @@ var checkwin = function() {
   // loop through the players choices
   // if the choice is in the winning array it's good
   // if it's not, they lose
-  for (var i=0; i< playersChoices.length; i++) {
-    var choice = playersChoices[i];
-    var count = 0;
-    for (var j=0; j< winningcombo.length;j++){
-      var recipe = winningcombo[j];
-      console.log(recipe);
-      if (recipe.indexOf(choice) === -1) {
-        continue;
-      } else {
-        count++ ;
-        console.log(count);
+  for (var i=0; i< winningcombo.length; i++) {
+    var choice = winningcombo[i];
+    for (var j=0; j < playersChoices[j]; j++) {
+      var innervalue =  playersChoices[i][j];
+
+     //if the choice is not there
+     if (winningcombo.indexOf(innervalue) === -1) {
+      console.log('Wrong Choice');
+      return false;
       }
-      if (count === 3) {
-        console.log('WIN!');
-        return true;
-      } else {
-        count = 0;
-      }
+     }
     }
+    console.log("You earned 100 points!");
+    return true;
+};
+
+checkwin();
+
+    //  for (var i=0; i< playersChoices.length; i++) {
+    // var choice = playersChoices[i];
+    // var count = 0;
+    // for (var j=0; j< winningcombo.length;j++){
+    //   var recipe = winningcombo[j];
+    //   console.log(recipe);
+    //   if (recipe.indexOf(choice) === -1) {
+    //     continue;
+    //   } else {
+    //     count++ ;
+    //     console.log(count);
+    //   }
+    //   if (count === 3) {
+    //     console.log('WIN!');
+    //     return true;
+    //   } else {
+    //     count = 0;
+    //   }
+    // }
+
+
+
+
+
     //switch the for loops - by Kate
 
     //go through the winning possibilities instead of the other way around.
 
     // if the choice is not there
     ///if (winningcombo.indexOf(choice) === -1) {
-      console.log('wrong choice');
-      // return early
-      return false;
-    //}
-  }
+    //   console.log('wrong choice');
+    //   // return early
+    //   return false;
+    // //}
   // if we don't return from the function early
   // return true
   ///console.log('right choice');
   ///return true;
-};
 
-//checkwin();
+
 
 // when teh player has selected three ingredients
 // check and see if they're in the winningcombo
