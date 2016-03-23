@@ -72,6 +72,10 @@ $('#btn2').on('click', function() {
 $('#cell1').on('click', function() {
   var cell1 = $(this).text();
   playersChoices.push(cell1.trim());
+  if (playersChoices.length === 3) {
+    checkwin();
+    playersChoices = [];
+  }
 });
 
 $('#cell2').on('click', function() {
@@ -197,7 +201,7 @@ var checkWin = function() {
 
 
 // $('td').on('click', function(){
-//   if (playersChoices.length >= 3){
+ // if (playersChoices.length >= 3){
 //     var choice = playersChoices.join(',');
 //   for (var i=0; i< winningcombo.length;i++) {
 //     var recipe = winningcombo[i].join(',');
