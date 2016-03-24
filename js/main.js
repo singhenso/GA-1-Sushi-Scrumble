@@ -125,9 +125,7 @@ function gameOver() {
 //checkWin functions runs everytime player clicks on ingredients to
 //to compare it to the winning choices.
 var checkWin = function() {
-
-
-var right_wrong = true;
+var wrongAnswer = true;
     var count = 0;
     var recipe = targetSushi;
     console.log(recipe);
@@ -138,16 +136,15 @@ var right_wrong = true;
         count++;
         if (count === 3) {
           console.log('You made the Sushi with correct ingredients!');
-          right_wrong = false;
+          wrongAnswer = false;
           score= score + 100;
           showScore();
+          gameOver();
         }
         continue;
       }
-    }
-    //
-
-  if(right_wrong){
+  }
+  if(wrongAnswer){
     score= score - 100;
     showScore();
     gameOver();
