@@ -3,7 +3,6 @@ $('.enter_link').click(function () {
     setTimeout(function() { getSushi(); }, 1500);
 });
 
-
 var winningcombo =[['Shrimp', 'Seaweed', 'Rice'],
                    ['Tuna', 'Seaweed', 'Rice'],
                    ['Scallop', 'Seaweed', 'Rice'],
@@ -13,34 +12,12 @@ var winningcombo =[['Shrimp', 'Seaweed', 'Rice'],
                    ['Lobster', 'Seaweed', 'Rice'],
                    ['Scallop', 'Seaweed', 'Rice']];
 
-// when the user clicks on a button, get the text  and add it
-// to the playersChoices array
 var playersChoices = [];
 var targetSushi ;
 var getSushi = function() {
   targetSushi = winningcombo[Math.floor(Math.random()*7)];
   alert('Make me a ' + targetSushi[0] + ' Sushi!');
 };
-
-
-
-
-//make a screen tell the player to make x sushi
-//player clicks ok and then continues
-// if player clicks on the correct ingredient. player scores
-
-//link
-
-
-// $('#btn1').on('click', function() {
-//   var gamebegin = $(this).text();
-//   console.log(gamebegin);
-// });
-
-// $('#btn2').on('click', function() {
-//   var instructions =$(this).text();
-//   playersChoices.push(instructions);
-// });
 
 $('#cell1').on('click', function() {
   var cell1 = $(this).text();
@@ -141,56 +118,10 @@ function gameOver() {
 }
 
 var sushi;
-
-///var checkwin = function() {
-  //loop through the players choices
-  //if the choice is in the winning array it's good
-  //if it's not, they lose
-              // var count = [];
-              // for (var i=0;i<playersChoices.length; i++) {
-              //   var choice = playersChoices[i];
-              //   //if the choice is not there
-              //   for (var x=0;x<winningcombo[i].length;x++) {
-              //     count.push(playersChoices[i][x]);
-              //     console.log(count);
-              //    if(recipe === choice){
-              //       console.log(playersChoices);
-              //       score= score + 100;
-              //       showScore();
-              //       alert("you win!");
-              //       gameover();
-              //       choice.length = 0;
-              //       playersChoices.length = 0;
-              //       break;
-              //       //return;
-              //       //location.reload();
-              //     } else if (recipe != choice); {
-              //       score= score - 100;
-              //       console.log(playersChoices);
-              //       showScore();
-              //       alert("you lost!");
-              //       choice.length = 0;
-              //       playersChoices.length = 0;
-              //       i+=1;
-              //       break;
-              //       //i+=1;
-              //     }
-              //   }
-//     }
-  //if we don't return from the function early
-  //return true
-//   }
-// };
-
- //checkwin();
-
 var checkWin = function() {
-  //loop through the players choices
-  //if the choice is in the winning array it's good
-  //if it's not, they lose
+
 
 var right_wrong = true;
-  //for (var i=0; i<winningcombo.length;i++) {
     var count = 0;
     var recipe = targetSushi;
     console.log(recipe);
@@ -209,8 +140,6 @@ var right_wrong = true;
       }
     }
 
-  //}
-
   if(right_wrong){
     score= score - 100;
     showScore();
@@ -219,76 +148,3 @@ var right_wrong = true;
 
   }
 getSushi();};
-
-
-      // $('td').on('click', function() {
-      //   for (var i = 0; i < playersChoices.length; i ++) {
-      //    var choice = playersChoices[i];
-      //    for(var j =0; j < )
-      //   }
-      // });
-
-
-
-// $('td').on('click', function(){
-//  if (playersChoices.length >= 3){
-//     var choice = playersChoices.join(',');
-//   for (var i=0; i< winningcombo.length;i++) {
-//     var recipe = winningcombo[i].join(',');
-//     console.log(choice);
-//       if(recipe === choice){
-//         console.log(playersChoices);
-//         score= score + 100;
-//         showScore();
-//         alert("you win!");
-//         gameover();
-//         choice.length = 0;
-//         playersChoices.length = 0;
-//         break;
-//         //return;
-//         //location.reload();
-//       } else if (recipe != choice); {
-//         score= score - 100;
-//         console.log(playersChoices);
-//         showScore();
-//         alert("you lost!");
-//         choice.length = 0;
-//         playersChoices.length = 0;
-//         i+=1;
-//         break;
-//         //i+=1;
-//       }
-//     }
-//   }
-// });
-
-// $('td').on('click', function(){
-//   if (playersChoices.length >= 3) {
-//     var choice = playersChoices.join(',');
-//   for (var i=0; i< winningcombo.length;) {
-//     var recipe = winningcombo[i].join(',');
-//     console.log(choice);
-//       if(recipe === choice){
-//         console.log(playersChoices);
-//         score= score + 100;
-//         showScore();
-//         alert("you win!");
-//         choice.length = 0;
-//         playersChoices.length = 0;
-//         break;
-//         //return;
-//         //location.reload();
-//       } else if (recipe != choice); {
-//         score= score - 100;
-//         console.log(playersChoices);
-//         showScore();
-//         alert("you lost!");
-//         choice.length = 0;
-//         playersChoices.length = 0;
-//         i+=1;
-//         break;
-//        // i+=1;
-//       }
-//       }
-//     }
-//   });
