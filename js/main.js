@@ -1,6 +1,8 @@
 $('.enter_link').click(function () {
     $(this).parent('#splashscreen').fadeOut(500);
+    setTimeout(function() { getSushi(); }, 1500);
 });
+
 
 var winningcombo =[['Shrimp', 'Seaweed', 'Rice'],
                    ['Tuna', 'Seaweed', 'Rice'],
@@ -14,6 +16,13 @@ var winningcombo =[['Shrimp', 'Seaweed', 'Rice'],
 // when the user clicks on a button, get the text  and add it
 // to the playersChoices array
 var playersChoices = [];
+var targetSushi ;
+var getSushi = function() {
+  targetSushi = winningcombo[Math.floor(Math.random()*7)];
+  alert('Make me a ' + targetSushi[0] + ' Sushi, bitch!');
+};
+
+
 
 
 //make a screen tell the player to make x sushi
@@ -131,6 +140,7 @@ function gameOver() {
  }
 }
 
+var sushi;
 
 ///var checkwin = function() {
   //loop through the players choices
@@ -180,9 +190,9 @@ var checkWin = function() {
   //if it's not, they lose
 
 var right_wrong = true;
-  for (var i=0; i<winningcombo.length;i++) {
+  //for (var i=0; i<winningcombo.length;i++) {
     var count = 0;
-    var recipe = winningcombo[i];
+    var recipe = targetSushi;
     console.log(recipe);
     for (var j=0; j<playersChoices.length; j++) {
       var choice=playersChoices[j];
@@ -193,22 +203,22 @@ var right_wrong = true;
           console.log('You made the Sushi with correct ingredients!');
           right_wrong = false;
           score= score + 100;
-
           showScore();
         }
         continue;
       }
     }
 
-  }
+  //}
 
   if(right_wrong){
     score= score - 100;
     showScore();
+    gameOver();
     console.log('none match');
 
   }
-};
+getSushi();};
 
 
       // $('td').on('click', function() {
