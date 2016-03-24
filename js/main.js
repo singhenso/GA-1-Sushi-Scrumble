@@ -43,7 +43,7 @@ var winningcombo =[['Shrimp', 'Seaweed', 'Rice'],
                    ['Scallop', 'Seaweed', 'Rice'],
                    ['Salmon', 'Seaweed', 'Rice'],
                    ['Squid', 'Seaweed', 'Rice'],
-                   ['Snapper',   'Seaweed', 'Rice'],
+                   ['Snapper', 'Seaweed', 'Rice'],
                    ['Lobster', 'Seaweed', 'Rice'],
                    ['Scallop', 'Seaweed', 'Rice']];
 
@@ -73,7 +73,7 @@ $('#cell1').on('click', function() {
   var cell1 = $(this).text();
   playersChoices.push(cell1.trim());
   if (playersChoices.length === 3) {
-    checkwin();
+    checkWin();
     playersChoices = [];
   }
 });
@@ -81,34 +81,66 @@ $('#cell1').on('click', function() {
 $('#cell2').on('click', function() {
   var cell2 = $(this).text();
   playersChoices.push(cell2.trim());
+  if (playersChoices.length === 3) {
+    checkWin();
+    playersChoices = [];
+  }
 });
 $('#cell3').on('click', function() {
   var cell3 = $(this).text();
   playersChoices.push(cell3.trim());
+   if (playersChoices.length === 3) {
+    checkWin();
+    playersChoices = [];
+  }
 });
 $('#cell4').on('click', function() {
   var cell4 = $(this).text();
   playersChoices.push(cell4.trim());
+   if (playersChoices.length === 3) {
+    checkWin();
+    playersChoices = [];
+  }
 });
 $('#cell5').on('click', function() {
   var cell5 = $(this).text();
   playersChoices.push(cell5.trim());
+   if (playersChoices.length === 3) {
+    checkWin();
+    playersChoices = [];
+  }
 });
 $('#cell6').on('click', function() {
   var cell6 = $(this).text();
   playersChoices.push(cell6.trim());
+   if (playersChoices.length === 3) {
+    checkWin();
+    playersChoices = [];
+  }
 });
 $('#cell7').on('click', function() {
   var cell7 = $(this).text();
   playersChoices.push(cell7.trim());
+   if (playersChoices.length === 3) {
+    checkWin();
+    playersChoices = [];
+  }
 });
 $('#cell8').on('click', function() {
   var cell8 = $(this).text();
   playersChoices.push(cell8.trim());
+   if (playersChoices.length === 3) {
+    checkWin();
+    playersChoices = [];
+  }
 });
 $('#cell9').on('click', function() {
   var cell9 = $(this).text();
   playersChoices.push(cell9.trim());
+   if (playersChoices.length === 3) {
+    checkWin();
+    playersChoices = [];
+  }
 });
 
 
@@ -118,7 +150,7 @@ function showScore() {
   $('#scoreboard').text(score);
 }
 
-function gameover() {
+function gameOver() {
   if (score >= 1000)
     alert('You won the Game! Congrats! ');
 }
@@ -176,6 +208,8 @@ var checkWin = function() {
     for (var j=0; j<playersChoices.length; j++) {
       var choice=playersChoices[j];
       if (recipe.indexOf(choice) === -1) {
+        console.log(choice);
+        score= score + 100;
         continue;
       } else {
         count++;
@@ -183,13 +217,17 @@ var checkWin = function() {
       }
     }
     if (count === 3) {
-      console.log('Win!');
+      showScore();
+      console.log('You Won!');
+      score= score - 100;
+      gameOver();
       return true;
     } else {
       count = 0;
     }
   }
 };
+
 
       // $('td').on('click', function() {
       //   for (var i = 0; i < playersChoices.length; i ++) {
