@@ -19,7 +19,7 @@ var playersChoices = [];
 var targetSushi ;
 var getSushi = function() {
   targetSushi = winningcombo[Math.floor(Math.random()*7)];
-  alert('Make me a ' + targetSushi[0] + ' Sushi, bitch!');
+  alert('Make me a ' + targetSushi[0] + ' Sushi!');
 };
 
 
