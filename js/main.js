@@ -25,6 +25,7 @@ var getSushi = function() {
 //Once the player clicks three ingredients, it runs the Checkwin function.
 $('#cell1').on('click', function() {
   //var cell1 = $(this).text();
+  $('#newChoice').append('<img src="./images/rice.jpg" width = 100px />');
   playersChoices.push('Rice');
   if (playersChoices.length === 3) {
     checkWin();
@@ -34,6 +35,7 @@ $('#cell1').on('click', function() {
 
 $('#cell2').on('click', function() {
   //var cell2 = $(this).text();
+  $('#newChoice').append('<img src="./images/sea_weed.png" width = 100px />');
   playersChoices.push('Seaweed');
   if (playersChoices.length === 3) {
     checkWin();
@@ -42,6 +44,7 @@ $('#cell2').on('click', function() {
 });
 $('#cell3').on('click', function() {
   //var cell3 = $(this).text();
+  $('#newChoice').append('<img src="./images/tuna.jpg" width = 100px />');
   playersChoices.push('Tuna');
    if (playersChoices.length === 3) {
     checkWin();
@@ -50,6 +53,7 @@ $('#cell3').on('click', function() {
 });
 $('#cell4').on('click', function() {
   //var cell4 = $(this).text();
+  $('#newChoice').append('<img src="./images/shrimp.jpg" width = 100px />');
   playersChoices.push('Shrimp');
    if (playersChoices.length === 3) {
     checkWin();
@@ -58,6 +62,7 @@ $('#cell4').on('click', function() {
 });
 $('#cell5').on('click', function() {
   //var cell5 = $(this).text();
+  $('#newChoice').append('<img src="./images/salmon.jpg" width = 100px />');
   playersChoices.push('Salmon');
    if (playersChoices.length === 3) {
     checkWin();
@@ -66,6 +71,7 @@ $('#cell5').on('click', function() {
 });
 $('#cell6').on('click', function() {
   //var cell6 = $(this).text();
+  $('#newChoice').append('<img src="./images/squid.jpg" width = 100px />');
   playersChoices.push('Squid');
    if (playersChoices.length === 3) {
     checkWin();
@@ -74,6 +80,7 @@ $('#cell6').on('click', function() {
 });
 $('#cell7').on('click', function() {
   //var cell7 = $(this).text();
+  $('#newChoice').append('<img src="./images/snapper.jpg" width = 100px />');
   playersChoices.push('Snapper');
    if (playersChoices.length === 3) {
     checkWin();
@@ -82,6 +89,7 @@ $('#cell7').on('click', function() {
 });
 $('#cell8').on('click', function() {
   //var cell8 = $(this).text();
+  $('#newChoice').append('<img src="./images/lobster.jpg" width = 100px />');
   playersChoices.push('Lobster');
    if (playersChoices.length === 3) {
     checkWin();
@@ -90,6 +98,7 @@ $('#cell8').on('click', function() {
 });
 $('#cell9').on('click', function() {
   //var cell9 = $(this).text();
+  $('#newChoice').append('<img src="./images/scallop.jpg" width = 100px />');
   playersChoices.push('Scallop');
    if (playersChoices.length === 3) {
     checkWin();
@@ -133,6 +142,7 @@ var wrongAnswer = true;
           score= score + 100;
           gameOver();
           showScore();
+          $("#newChoice img").remove();
         }
         continue;
       }
@@ -140,7 +150,8 @@ var wrongAnswer = true;
   if(wrongAnswer){
     score= score - 100;
     showScore();
-    gameOver();;
+    gameOver();
+    $("#newChoice img").remove();
 
   }
 //getSushi is a function that pops up within 2 seconds of starting game
