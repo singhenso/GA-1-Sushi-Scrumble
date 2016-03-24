@@ -106,8 +106,8 @@ function showScore() {
 
 //If player scores over 1000, the Game is Over is the player Wins!
 function gameOver() {
-  if (score === 300) {
-    alert('You won the Game! Congrats! ');
+  if (score === 500) {
+    alert('You won the Game! Congrats! Continue playing to beat your high Score!');
  } else if (score <= 0) {
   alert('You made the Wrong Sushi!');
   if (score === -300) {
