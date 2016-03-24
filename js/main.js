@@ -145,7 +145,7 @@ var right_wrong = true;
         continue;
       }
     }
-    //this a t
+    //this
 
   if(right_wrong){
     score= score - 100;
