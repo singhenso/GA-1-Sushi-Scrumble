@@ -1,32 +1,28 @@
-#splashscreen {
-    position:absolute;
-    top:0;
-    left:0;
-    bottom:0;
-    width:100%;
-    background-image: url(../images/sushibackground2.jpg);
-    background-size:cover
-}
+/*
+***********
+Main Screen
+************/
+
+
 body {
   background-image: url(../images/sushibackground.jpg);
   background-size:cover
 }
 
-.Instructions {
-   background-image: url(../images/sushibackground.jpg);
-  background-size:cover
-}
 div {
   margin: auto;
   width: 100%;
   padding: 10px;
+  color:#b3cccc;
 }
 
 #scoreboard {
     background-color: #b3cccc;
     color: black;
-    padding: 15px 32px;
     text-align: center;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
 }
 
 
@@ -112,6 +108,10 @@ h1 {
      border-style: solid
    }
 
+/*****************************
+      Media Queries
+*****************************/
+
 @media screen and (max-width: 980px) {
   #pagewrap {
     width: 94%;
@@ -142,6 +142,8 @@ h1 {
     display: none;
   }
 }
+
+
 
 
 

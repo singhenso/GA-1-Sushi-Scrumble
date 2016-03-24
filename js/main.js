@@ -1,6 +1,6 @@
 $('.enter_link').click(function () {
     $(this).parent('#splashscreen').fadeOut(500);
-    setTimeout(function() { getSushi(); }, 1500);
+    setTimeout(function() { getSushi(); }, 1000);
 });
 //These are the 8 possible winning combos to score 100 points
 var winningcombo =[['Shrimp', 'Seaweed', 'Rice'],
