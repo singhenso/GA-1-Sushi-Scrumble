@@ -24,9 +24,8 @@ var getSushi = function() {
 //Trim removes any empty space
 //Once the player clicks three ingredients, it runs the Checkwin function.
 $('#cell1').on('click', function() {
-  var cell1 = $(this).text();
-  playersChoices.push(cell1.trim());
-  console.log(cell1);
+  //var cell1 = $(this).text();
+  playersChoices.push('Rice');
   if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
@@ -34,72 +33,64 @@ $('#cell1').on('click', function() {
 });
 
 $('#cell2').on('click', function() {
-  var cell2 = $(this).text();
-  playersChoices.push(cell2.trim());
-  console.log(cell2);
+  //var cell2 = $(this).text();
+  playersChoices.push('Seaweed');
   if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
   }
 });
 $('#cell3').on('click', function() {
-  var cell3 = $(this).text();
-  playersChoices.push(cell3.trim());
-  console.log(cell3);
+  //var cell3 = $(this).text();
+  playersChoices.push('Tuna');
    if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
   }
 });
 $('#cell4').on('click', function() {
-  var cell4 = $(this).text();
-  playersChoices.push(cell4.trim());
-  console.log(cell4);
+  //var cell4 = $(this).text();
+  playersChoices.push('Shrimp');
    if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
   }
 });
 $('#cell5').on('click', function() {
-  var cell5 = $(this).text();
-  playersChoices.push(cell5.trim());
-  console.log(cell5);
+  //var cell5 = $(this).text();
+  playersChoices.push('Salmon');
    if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
   }
 });
 $('#cell6').on('click', function() {
-  var cell6 = $(this).text();
-  playersChoices.push(cell6.trim());
-  console.log(cell6);
+  //var cell6 = $(this).text();
+  playersChoices.push('Squid');
    if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
   }
 });
 $('#cell7').on('click', function() {
-  var cell7 = $(this).text();
-  playersChoices.push(cell7.trim());
-  console.log(cell7);
+  //var cell7 = $(this).text();
+  playersChoices.push('Snapper');
    if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
   }
 });
 $('#cell8').on('click', function() {
-  var cell8 = $(this).text();
-  playersChoices.push(cell8.trim());
-  console.log(cell8);
+  //var cell8 = $(this).text();
+  playersChoices.push('Lobster');
    if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
   }
 });
 $('#cell9').on('click', function() {
-  var cell9 = $(this).text();
-  playersChoices.push(cell9.trim());
-  console.log(cell9);
+  //var cell9 = $(this).text();
+  playersChoices.push('Scallop');
    if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
@@ -115,10 +106,13 @@ function showScore() {
 
 //If player scores over 1000, the Game is Over is the player Wins!
 function gameOver() {
-  if (score >= 1000) {
+  if (score === 300) {
     alert('You won the Game! Congrats! ');
  } else if (score <= 0) {
-  alert('You have lost!');
+  alert('You made the Wrong Sushi!');
+  if (score === -300) {
+    alert('You have Lost the Game! Try again');
+  }
  }
 }
 
@@ -128,7 +122,6 @@ var checkWin = function() {
 var wrongAnswer = true;
     var count = 0;
     var recipe = targetSushi;
-    console.log(recipe);
     for (var j=0; j<playersChoices.length; j++) {
       var choice=playersChoices[j];
       if (recipe.indexOf(choice) === j) {
@@ -138,8 +131,8 @@ var wrongAnswer = true;
           console.log('You made the Sushi with correct ingredients!');
           wrongAnswer = false;
           score= score + 100;
-          showScore();
           gameOver();
+          showScore();
         }
         continue;
       }
@@ -147,8 +140,7 @@ var wrongAnswer = true;
   if(wrongAnswer){
     score= score - 100;
     showScore();
-    gameOver();
-    console.log('none match');
+    gameOver();;
 
   }
 //getSushi is a function that pops up within 2 seconds of starting game
