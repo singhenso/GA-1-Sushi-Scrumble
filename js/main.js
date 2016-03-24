@@ -1,43 +1,7 @@
-// shrimp sushi = rice, seweed , shrimp
-
 $('.enter_link').click(function () {
     $(this).parent('#splashscreen').fadeOut(500);
 });
 
-var Tuna = {
-  name: 'Tuna',
-  ingredients: ["Rice","Seaweed","Tuna"],
-};
-
-var Scallop = {
-  name: 'Tuna',
-  ingredients: ["Rice","Seaweed","Tuna"],
-};
-var Salmon = {
-  name: 'Salmon',
-  ingredients: ["Rice","Seaweed","Salmon"],
-};
-var Scallop = {
-  name: 'Scallop',
-  ingredients: ["Rice","Seaweed","Scallop"],
-};
-var Squid = {
-  name: 'Squid',
-  ingredients: ["Rice","Seaweed","Squid"],
-};
-var Snapper = {
-  name: 'Snapper',
-  ingredients: ["Rice","Seaweed","Snapper"],
-};
-var Lobster = {
-  name: 'Lobster',
-  ingredients: ["Rice","Seaweed","Lobster"],
-};
-var Shrimp = {
-  name: 'Shrimp',
-  ingredients: ["Rice","Seaweed","Shrimp"],
-  //this function should tell the user to make a specific sushi
-};
 var winningcombo =[['Shrimp', 'Seaweed', 'Rice'],
                    ['Tuna', 'Seaweed', 'Rice'],
                    ['Scallop', 'Seaweed', 'Rice'],
@@ -59,19 +23,20 @@ var playersChoices = [];
 //link
 
 
-$('#btn1').on('click', function() {
-  var gamebegin = $(this).text();
-  console.log(gamebegin);
-});
+// $('#btn1').on('click', function() {
+//   var gamebegin = $(this).text();
+//   console.log(gamebegin);
+// });
 
-$('#btn2').on('click', function() {
-  var instructions =$(this).text();
-  playersChoices.push(instructions);
-});
+// $('#btn2').on('click', function() {
+//   var instructions =$(this).text();
+//   playersChoices.push(instructions);
+// });
 
 $('#cell1').on('click', function() {
   var cell1 = $(this).text();
   playersChoices.push(cell1.trim());
+  console.log(cell1);
   if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
@@ -81,6 +46,7 @@ $('#cell1').on('click', function() {
 $('#cell2').on('click', function() {
   var cell2 = $(this).text();
   playersChoices.push(cell2.trim());
+  console.log(cell2);
   if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
@@ -89,6 +55,7 @@ $('#cell2').on('click', function() {
 $('#cell3').on('click', function() {
   var cell3 = $(this).text();
   playersChoices.push(cell3.trim());
+  console.log(cell3);
    if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
@@ -97,6 +64,7 @@ $('#cell3').on('click', function() {
 $('#cell4').on('click', function() {
   var cell4 = $(this).text();
   playersChoices.push(cell4.trim());
+  console.log(cell4);
    if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
@@ -105,6 +73,7 @@ $('#cell4').on('click', function() {
 $('#cell5').on('click', function() {
   var cell5 = $(this).text();
   playersChoices.push(cell5.trim());
+  console.log(cell5);
    if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
@@ -113,6 +82,7 @@ $('#cell5').on('click', function() {
 $('#cell6').on('click', function() {
   var cell6 = $(this).text();
   playersChoices.push(cell6.trim());
+  console.log(cell6);
    if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
@@ -121,6 +91,7 @@ $('#cell6').on('click', function() {
 $('#cell7').on('click', function() {
   var cell7 = $(this).text();
   playersChoices.push(cell7.trim());
+  console.log(cell7);
    if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
@@ -129,6 +100,7 @@ $('#cell7').on('click', function() {
 $('#cell8').on('click', function() {
   var cell8 = $(this).text();
   playersChoices.push(cell8.trim());
+  console.log(cell8);
    if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
@@ -137,6 +109,7 @@ $('#cell8').on('click', function() {
 $('#cell9').on('click', function() {
   var cell9 = $(this).text();
   playersChoices.push(cell9.trim());
+  console.log(cell9);
    if (playersChoices.length === 3) {
     checkWin();
     playersChoices = [];
@@ -151,9 +124,13 @@ function showScore() {
 }
 
 function gameOver() {
-  if (score >= 1000)
+  if (score >= 1000) {
     alert('You won the Game! Congrats! ');
+ } else if (score <= 0) {
+  alert('You have lost!');
+ }
 }
+
 
 ///var checkwin = function() {
   //loop through the players choices
@@ -195,36 +172,41 @@ function gameOver() {
 //   }
 // };
 
-// checkwin();
+ //checkwin();
 
 var checkWin = function() {
   //loop through the players choices
   //if the choice is in the winning array it's good
   //if it's not, they lose
-  var count = 0;
+
+var right_wrong = true;
   for (var i=0; i<winningcombo.length;i++) {
+    var count = 0;
     var recipe = winningcombo[i];
     console.log(recipe);
     for (var j=0; j<playersChoices.length; j++) {
       var choice=playersChoices[j];
-      if (recipe.indexOf(choice) === -1) {
-        console.log(choice);
-        score= score + 100;
-        continue;
-      } else {
+      if (recipe.indexOf(choice) === j) {
+        console.log('you got one right ');
         count++;
-        console.log(count);
+        if (count === 3) {
+          console.log('You made the Sushi with correct ingredients!');
+          right_wrong = false;
+          score= score + 100;
+
+          showScore();
+        }
+        continue;
       }
     }
-    if (count === 3) {
-      showScore();
-      console.log('You Won!');
-      score= score - 100;
-      gameOver();
-      return true;
-    } else {
-      count = 0;
-    }
+
+  }
+
+  if(right_wrong){
+    score= score - 100;
+    showScore();
+    console.log('none match');
+
   }
 };
 
@@ -239,39 +221,39 @@ var checkWin = function() {
 
 
 // $('td').on('click', function(){
- // if (playersChoices.length >= 3){
+//  if (playersChoices.length >= 3){
 //     var choice = playersChoices.join(',');
 //   for (var i=0; i< winningcombo.length;i++) {
 //     var recipe = winningcombo[i].join(',');
 //     console.log(choice);
-      // if(recipe === choice){
-      //   console.log(playersChoices);
-      //   score= score + 100;
-      //   showScore();
-      //   alert("you win!");
-      //   gameover();
-      //   choice.length = 0;
-      //   playersChoices.length = 0;
-      //   break;
-      //   //return;
-      //   //location.reload();
-      // } else if (recipe != choice); {
-      //   score= score - 100;
-      //   console.log(playersChoices);
-      //   showScore();
-      //   alert("you lost!");
-      //   choice.length = 0;
-      //   playersChoices.length = 0;
-      //   i+=1;
-      //   break;
-      //   //i+=1;
+//       if(recipe === choice){
+//         console.log(playersChoices);
+//         score= score + 100;
+//         showScore();
+//         alert("you win!");
+//         gameover();
+//         choice.length = 0;
+//         playersChoices.length = 0;
+//         break;
+//         //return;
+//         //location.reload();
+//       } else if (recipe != choice); {
+//         score= score - 100;
+//         console.log(playersChoices);
+//         showScore();
+//         alert("you lost!");
+//         choice.length = 0;
+//         playersChoices.length = 0;
+//         i+=1;
+//         break;
+//         //i+=1;
 //       }
 //     }
 //   }
 // });
 
 // $('td').on('click', function(){
-//   if (playersChoices.length >= 3){
+//   if (playersChoices.length >= 3) {
 //     var choice = playersChoices.join(',');
 //   for (var i=0; i< winningcombo.length;) {
 //     var recipe = winningcombo[i].join(',');
@@ -295,8 +277,8 @@ var checkWin = function() {
 //         playersChoices.length = 0;
 //         i+=1;
 //         break;
-//         //i+=1;
+//        // i+=1;
+//       }
 //       }
 //     }
-//   }
-// });
+//   });

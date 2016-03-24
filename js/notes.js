@@ -1,3 +1,46 @@
+// shrimp sushi = rice, seweed , shrimp
+
+// $('.enter_link').click(function () {
+//     $(this).parent('#splashscreen').fadeOut(500);
+// });
+
+// var Tuna = {
+//   name: 'Tuna',
+//   ingredients: ["Rice","Seaweed","Tuna"],
+// };
+
+// var Scallop = {
+//   name: 'Tuna',
+//   ingredients: ["Rice","Seaweed","Tuna"],
+// };
+// var Salmon = {
+//   name: 'Salmon',
+//   ingredients: ["Rice","Seaweed","Salmon"],
+// };
+// var Scallop = {
+//   name: 'Scallop',
+//   ingredients: ["Rice","Seaweed","Scallop"],
+// };
+// var Squid = {
+//   name: 'Squid',
+//   ingredients: ["Rice","Seaweed","Squid"],
+// };
+// var Snapper = {
+//   name: 'Snapper',
+//   ingredients: ["Rice","Seaweed","Snapper"],
+// };
+// var Lobster = {
+//   name: 'Lobster',
+//   ingredients: ["Rice","Seaweed","Lobster"],
+// };
+// var Shrimp = {
+//   name: 'Shrimp',
+//   ingredients: ["Rice","Seaweed","Shrimp"],
+//   //this function should tell the user to make a specific sushi
+// };
+
+
+
 
 // This was from Phil. This is what he recommended
 //var checkwin = function() {
