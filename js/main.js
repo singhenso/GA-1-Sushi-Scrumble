@@ -125,6 +125,24 @@ function gameOver() {
  }
 }
 
+//this randominzes the grid of ingredient selection
+
+
+
+
+          //var randomTable =  $('#column').get().sort(function() {
+          //   return Math.round(Math.random())-0.5;
+          //  });
+          //  $(randomTable).appendTo(randomTable[0].parentNode).show();
+
+var randomizer = function() {
+    var randomTable =  $('#column').get().sort(function() {
+            return Math.round(Math.random())-0.5;
+           });
+           $(randomTable).appendTo(randomTable[0].parentNode).show();
+         };
+
+
 //checkWin functions runs everytime player clicks on ingredients to
 //to compare it to the winning choices.
 var checkWin = function() {
@@ -142,7 +160,8 @@ var wrongAnswer = true;
           score= score + 100;
           gameOver();
           showScore();
-          $("#newChoice img").remove();
+          randomizer();
+         $("#newChoice img").remove();
         }
         continue;
       }
@@ -151,6 +170,7 @@ var wrongAnswer = true;
     score= score - 100;
     showScore();
     gameOver();
+    randomizer();
     $("#newChoice img").remove();
 
   }
