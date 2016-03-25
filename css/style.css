@@ -3,14 +3,18 @@
 Main Screen
 ************/
 
-
+.Boss {
+  text-align: center;
+  margin: auto;
+  width:100px;
+}
 body {
   background-image: url(../images/sushi.jpg);
   background-size:cover;
   background-repeat: no-repeat;
 }
 
-td table div {
+td table  {
   margin: auto;
   width: 100%;
   padding: 10px;
@@ -19,31 +23,12 @@ td table div {
 }
 
 
-#scoreboard {
-    background-color: #b3cccc;
-    width: 75px;
-    height: 20px;
-    color:black;
-    text-align: left;
-    border-color: black;
-    font-size: 16px;
-    text-align: center;
-  }
-
-#newChoice {
-  background-color: #b3cccc;
-  width: 320px;
-  height: 100px;
-  color:;
-  border-color: black;
-  border:7px;
-}
-
 
 h1 {
-  background-color: #b3cccc;
+    background-color: #b3cccc;
     border: none;
     color: white;
+    width: 275px;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -51,24 +36,71 @@ h1 {
     font-size: 16px;
     color:black;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    border-style: solid;
+    border-width: medium;
 
 }
-
-
 .row {
   float: center;
   width: 100%;
 }
 
+
+
 .ingredient {
   cursor: pointer;
 }
+.square {
+    background: #000;
+    width: 100px;
+    height: 100px;
+    padding-bottom:20%;xz
+}
+.square  {
+    color: #fff;
+}
 
+.container{
+     border-style: solid;
+   }
+.column{
+     border-style: solid;
+
+   }
+
+
+#scoreboard {
+    background-color: #b3cccc;
+    width: 340px;
+    height: 50px;
+    color:black;
+    text-align: left;
+    border-color: black;
+    font-size: 16px;
+    text-align: center;
+    border-style: solid;
+    border-width: medium;
+  }
+
+#newChoice {
+  background-color: #b3cccc;
+  width: 340px;
+  height: 100px;
+  color:;
+  border-color: black;
+  border:7px;
+  border-style: solid;
+  border-width: medium;
+}
+
+/********
+Buttons
+********/
 #btn1  {
     background-color: #b3cccc;
     border: none;
     color: white;
-    padding: 15px 32px;
+    /*padding: 15px 32px;*/
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -105,22 +137,7 @@ h1 {
 
 
 
-.square {
-    background: #000;
-    width: 100px;
-    height: 100px;
-    padding-bottom:20%;xz
-}
-.square h1 {
-    color: #fff;
-}
 
-.container{
-     border-style: solid
-   }
-   .column{
-     border-style: solid
-   }
 
 /*****************************
       Media Queries
