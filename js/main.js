@@ -1,3 +1,4 @@
+//This is the splash screen that sets a timeout for make a sushi prompt.
 $('.enter_link').click(function () {
     $(this).parent('#splashscreen').fadeOut(500);
     setTimeout(function() { getSushi(); }, 1000);
@@ -13,6 +14,7 @@ var winningcombo =[['Shrimp', 'Seaweed', 'Rice'],
                    ['Scallop', 'Seaweed', 'Rice']];
 //Empty array which gets filled with whatever the player clicks on
 var playersChoices = [];
+//targetSushi is assigned the random winning combo with 8 arrays.
 var targetSushi;
 //Tells the player to make 1 of the 8 possible sushies
 var getSushi = function() {
@@ -100,11 +102,12 @@ $('#cell9').on('click', function() {
 //Score is a variable that holds all the score, starting from 0.
 var score = 0;
 
+//this is a function that puts the current score in the scoreboard div.
 function showScore() {
   $('#scoreboard').text(score);
 }
 
-//If player scores over 1000, the Game is Over is the player Wins!
+//If player scores over 500, the Game is Over is the player Wins!
 function gameOver() {
   if (score === 500) {
     alert('You won the Game! Congrats!');
@@ -124,9 +127,11 @@ var randomizer = function() {
            $(randomTable).appendTo(randomTable[0].parentNode).show();
          };
 
+//the showScore function is delayed for 1 second
 setTimeout(function() { showScore; }, 1000);
 //checkWin functions runs everytime player clicks on ingredients to
-//to compare it to the winning choices.
+//compare it to the winning choices.
+//if player clicks wrong move, they get deduceted 100 points. If win, they get 100 oints.
 var checkWin = function() {
 var wrongAnswer = true;
     var count = 0;
