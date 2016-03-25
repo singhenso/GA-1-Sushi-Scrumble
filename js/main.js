@@ -117,16 +117,6 @@ function gameOver() {
  }
 }
 
-//this randominzes the grid of ingredient selection
-
-
-
-
-          //var randomTable =  $('#column').get().sort(function() {
-          //   return Math.round(Math.random())-0.5;
-          //  });
-          //  $(randomTable).appendTo(randomTable[0].parentNode).show();
-
 var randomizer = function() {
     var randomTable =  $('#column').get().sort(function() {
             return Math.round(Math.random())-0.5;
@@ -134,7 +124,7 @@ var randomizer = function() {
            $(randomTable).appendTo(randomTable[0].parentNode).show();
          };
 
-
+setTimeout(function() { showScore; }, 1000);
 //checkWin functions runs everytime player clicks on ingredients to
 //to compare it to the winning choices.
 var checkWin = function() {
@@ -147,11 +137,11 @@ var wrongAnswer = true;
         console.log('you got one right ');
         count++;
         if (count === 3) {
-          console.log('You made the Sushi with correct ingredients!');
+          alert('You made the Sushi with correct ingredients!');
           wrongAnswer = false;
           score= score + 100;
-          gameOver();
           showScore();
+          gameOver();
           randomizer();
          $("#newChoice img").remove();
         }
