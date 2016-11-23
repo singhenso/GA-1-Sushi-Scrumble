@@ -3,7 +3,9 @@ $('.enter_link').click(function () {
     $(this).parent('#splashscreen').fadeOut(500);
     setTimeout(function() { getSushi(); }, 1000);
 });
-//These are the 8 possible winning combos to score 100 points
+
+
+//These are the 8 possible winning combos to score 100 points. And winning combo text added.
 var winningcombo =[['Shrimp', 'Seaweed', 'Rice'],
                    ['Tuna', 'Seaweed', 'Rice'],
                    ['Scallop', 'Seaweed', 'Rice'],
@@ -12,11 +14,15 @@ var winningcombo =[['Shrimp', 'Seaweed', 'Rice'],
                    ['Snapper', 'Seaweed', 'Rice'],
                    ['Lobster', 'Seaweed', 'Rice'],
                    ['Scallop', 'Seaweed', 'Rice']];
+
+
 //Empty array which gets filled with whatever the player clicks on
 var playersChoices = [];
 //targetSushi is assigned the random winning combo with 8 arrays.
 var targetSushi;
 //Tells the player to make 1 of the 8 possible sushies
+
+
 var getSushi = function() {
   targetSushi = winningcombo[Math.floor(Math.random()*7)];
   alert('Make me a ' + targetSushi[0] + ' Sushi!');
@@ -120,12 +126,16 @@ function gameOver() {
  }
 }
 
+
+
 var randomizer = function() {
     var randomTable =  $('#column').get().sort(function() {
             return Math.round(Math.random())-0.5;
            });
            $(randomTable).appendTo(randomTable[0].parentNode).show();
          };
+
+
 
 //the showScore function is delayed for 1 second
 setTimeout(function() { showScore; }, 1000);
